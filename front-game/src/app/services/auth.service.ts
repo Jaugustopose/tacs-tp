@@ -13,7 +13,7 @@ export class AuthService {
   auth0Client$ = (from(
     createAuth0Client({
       domain: "tacticas.us.auth0.com",
-      client_id: "L5stWjySWxTZxrtLJ221E37WE2lP2fl7",
+      //client_id: yourAuth0ClientID,
       redirect_uri: `${window.location.origin}`,
       audience: "https://tacs.game/api"
     })
@@ -126,7 +126,7 @@ export class AuthService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
       client.logout({
-        client_id: "L5stWjySWxTZxrtLJ221E37WE2lP2fl7",
+        //client_id: yourAuth0ClientID,
         returnTo: `${window.location.origin}`
       });
     });
